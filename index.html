@@ -297,6 +297,34 @@
     margin: 0;
   }
 
+  /* ---------- Video embeds ---------- */
+
+  .video-card{
+    padding: 0;
+    overflow: hidden;
+    border-left: 1px solid var(--line);
+  }
+
+  .video-embed{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #10141A;
+  }
+
+  .video-embed iframe{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .video-card .video-caption{
+    padding: 14px 16px 16px;
+  }
+
   .placeholder-note{
     font-size: 11.5px;
     color: var(--text-dim);
@@ -334,17 +362,16 @@
     </div>
     <div class="hero-body">
       <p class="hero-tag">おかだゆうと / Yuto Okada</p>
-      <h1>稼ぐために、なんでもやる</h1>
+      <h1>システムを作り、発信する。</h1>
       <p class="lead">
-        FX、動画編集、システム構築やってます
-        楽するためなら、なんでもやる
+        自作のシステムや動画を投稿しながら、日々の発信をまとめています。
         各SNSはこちらから。
       </p>
 
       <div class="goal">
         <div class="goal-row">
           <span class="goal-label">目標</span>
-          <span class="goal-value">¥100,000,000円稼ぐこと</span>
+          <span class="goal-value">¥100,000,000</span>
         </div>
         <div class="ruler">
           <span class="mark" style="left:0%"></span>
@@ -437,16 +464,26 @@
       <h2>投稿した動画</h2>
     </div>
     <div class="card-grid">
-      <div class="card">
-        <p class="card-title">動画タイトルを入力</p>
-        <p class="card-desc">動画の概要とリンクをここに入れてください。</p>
+      <div class="card video-card">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="動画タイトルを入力" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-caption">
+          <p class="card-title">動画タイトルを入力</p>
+          <p class="card-desc">動画の概要をここに入れてください。</p>
+        </div>
       </div>
-      <div class="card">
-        <p class="card-title">動画タイトルを入力</p>
-        <p class="card-desc">動画の概要とリンクをここに入れてください。</p>
+      <div class="card video-card">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="動画タイトルを入力" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-caption">
+          <p class="card-title">動画タイトルを入力</p>
+          <p class="card-desc">動画の概要をここに入れてください。</p>
+        </div>
       </div>
     </div>
-    <p class="placeholder-note">※ ここはサンプルです。実際の動画タイトル・リンクに差し替えてください。</p>
+    <p class="placeholder-note">※ VIDEO_ID_1 / VIDEO_ID_2 を実際のYouTube動画IDに差し替えてください。</p>
   </div>
 
   <footer>
