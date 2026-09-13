@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>おかだゆうと | Link</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FBFDFF;
+    --surface: #FFFFFF;
+    --line: #E4EBF2;
+    --line-soft: #EEF4F9;
+    --text: #1C2530;
+    --text-dim: #78838F;
+    --blue: #2E8FE0;
+    --blue-soft: #EAF4FD;
+    --gold: #C6912F;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ background: var(--bg); }
+
+  body{
+    margin: 0;
+    background:
+      linear-gradient(var(--line-soft) 1px, transparent 1px) 0 0 / 100% 40px,
+      var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px 40px;
+  }
+
+  .page{
+    width: 100%;
+    max-width: 460px;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero{
+    position: relative;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    box-shadow: 0 12px 32px -20px rgba(30, 60, 90, .25);
+    overflow: hidden;
+    opacity: 0;
+    animation: rise .6s ease-out forwards;
+  }
+
+  @keyframes rise{
+    from{ opacity: 0; transform: translateY(10px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  .banner-wrap{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #10141A;
+  }
+  .banner-wrap img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .avatar-wrap{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: -44px;
+  }
+  .avatar-wrap img{
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--surface);
+    box-shadow: 0 4px 14px rgba(20, 40, 60, .18);
+    background: #10141A;
+  }
+
+  .hero-body{
+    padding: 14px 24px 26px;
+    text-align: center;
+  }
+
+  .hero-tag{
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: var(--text-dim);
+    margin: 0 0 6px;
+  }
+
+  .hero-body h1{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 1.35;
+    margin: 0 0 10px;
+  }
+
+  .hero-body p.lead{
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--text-dim);
+    margin: 0 auto 22px;
+    max-width: 30ch;
+  }
+
+  /* goal ruler */
+  .goal{
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    text-align: left;
+  }
+  .goal-row{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .goal-label{
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .goal-value{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--gold);
+    letter-spacing: .01em;
+  }
+  .ruler{
+    position: relative;
+    height: 10px;
+  }
+  .ruler::before{
+    content: "";
+    position: absolute;
+    top: 4px; left: 0; right: 0;
+    height: 1px;
+    background: var(--line);
+  }
+  .ruler .mark{
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 10px;
+    background: var(--line);
+  }
+  .ruler .mark.hit{
+    background: var(--gold);
+    height: 14px;
+    top: -2px;
+  }
+
+  /* ---------- Section ---------- */
+
+  .section{
+    margin-top: 30px;
+  }
+
+  .section-head{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-left: 2px;
+  }
+
+  .section-head .idx{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    background: var(--blue-soft);
+    padding: 2px 6px;
+  }
+
+  .section-head h2{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  /* ---------- Links ---------- */
+
+  .link-list{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .link-item{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: 0 6px 18px -16px rgba(30, 60, 90, .3);
+    transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .link-item:hover{
+    border-color: var(--blue);
+    transform: translateX(2px);
+    box-shadow: 0 10px 22px -14px rgba(46, 143, 224, .35);
+  }
+  .link-item:focus-visible{
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+  }
+
+  .link-mark{
+    width: 32px;
+    height: 32px;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    background: var(--blue-soft);
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--blue);
+  }
+
+  .link-body{
+    flex: 1;
+    min-width: 0;
+  }
+  .link-body .platform{
+    font-size: 11.5px;
+    color: var(--text-dim);
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .link-body .handle{
+    font-size: 14.5px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .link-go{
+    flex: none;
+    color: var(--text-dim);
+    font-size: 16px;
+  }
+
+  /* ---------- Cards ---------- */
+
+  .card-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card{
+    padding: 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--blue);
+    box-shadow: 0 6px 18px -16px rgba(30, 60, 90, .3);
+  }
+
+  .card .card-title{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0 0 6px;
+  }
+
+  .card .card-desc{
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  .placeholder-note{
+    font-size: 11.5px;
+    color: var(--text-dim);
+    opacity: .8;
+    margin-top: 10px;
+    padding-left: 2px;
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer{
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11.5px;
+    color: var(--text-dim);
+  }
+
+  @media (max-width: 380px){
+    .hero-body h1{ font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="banner-wrap">
+      <img src="banner.png" alt="おかだゆうと バナー">
+    </div>
+    <div class="avatar-wrap">
+      <img src="icon.png" alt="おかだゆうと アイコン">
+    </div>
+    <div class="hero-body">
+      <p class="hero-tag">おかだゆうと / Yuto Okada</p>
+      <h1>稼ぐために、なんでもやる</h1>
+      <p class="lead">
+        FX、動画編集、システム構築やってます
+        楽するためなら、なんでもやる
+        各SNSはこちらから。
+      </p>
+
+      <div class="goal">
+        <div class="goal-row">
+          <span class="goal-label">目標</span>
+          <span class="goal-value">¥100,000,000円稼ぐこと</span>
+        </div>
+        <div class="ruler">
+          <span class="mark" style="left:0%"></span>
+          <span class="mark" style="left:20%"></span>
+          <span class="mark" style="left:40%"></span>
+          <span class="mark" style="left:60%"></span>
+          <span class="mark" style="left:80%"></span>
+          <span class="mark hit" style="left:100%"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <span class="idx">01</span>
+      <h2>SNSリンク</h2>
+    </div>
+    <div class="link-list">
+
+      <a class="link-item" href="https://x.com/iwant1OkuYen" target="_blank" rel="noopener">
+        <span class="link-mark">X</span>
+        <span class="link-body">
+          <span class="platform">X-一億円稼ぐ男(予定)おかだ</span>
+          <span class="handle">@iwant1OkuYen</span>
+        </span>
+        <span class="link-go">↗</span>
+      </a>
+
+      <a class="link-item" href="https://x.com/FXBakuGachi" target="_blank" rel="noopener">
+        <span class="link-mark">X</span>
+        <span class="link-body">
+          <span class="platform">X — FXアカウント</span>
+          <span class="handle">@FXBakuGachi</span>
+        </span>
+        <span class="link-go">↗</span>
+      </a>
+
+      <a class="link-item" href="https://www.instagram.com/yuto.__.okada" target="_blank" rel="noopener">
+        <span class="link-mark">IG</span>
+        <span class="link-body">
+          <span class="platform">Instagram</span>
+          <span class="handle">yuto.__.okada</span>
+        </span>
+        <span class="link-go">↗</span>
+      </a>
+
+      <a class="link-item" href="https://www.tiktok.com/@yutookada_0.1billion" target="_blank" rel="noopener">
+        <span class="link-mark">TT</span>
+        <span class="link-body">
+          <span class="platform">TikTok</span>
+          <span class="handle">@yutookada_0.1billion</span>
+        </span>
+        <span class="link-go">↗</span>
+      </a>
+
+      <a class="link-item" href="https://www.youtube.com/@iwant1OkuYen" target="_blank" rel="noopener">
+        <span class="link-mark">YT</span>
+        <span class="link-body">
+          <span class="platform">YouTube</span>
+          <span class="handle">@iwant1OkuYen</span>
+        </span>
+        <span class="link-go">↗</span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <span class="idx">02</span>
+      <h2>作成したシステム</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <p class="card-title">システム名を入力</p>
+        <p class="card-desc">どんな課題を解決するシステムか、1〜2行で説明を入れてください。</p>
+      </div>
+      <div class="card">
+        <p class="card-title">システム名を入力</p>
+        <p class="card-desc">使用技術や公開リンクなどをここに記載できます。</p>
+      </div>
+    </div>
+    <p class="placeholder-note">※ ここはサンプルです。実際のシステム名・説明・リンクに差し替えてください。</p>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <span class="idx">03</span>
+      <h2>投稿した動画</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <p class="card-title">動画タイトルを入力</p>
+        <p class="card-desc">動画の概要とリンクをここに入れてください。</p>
+      </div>
+      <div class="card">
+        <p class="card-title">動画タイトルを入力</p>
+        <p class="card-desc">動画の概要とリンクをここに入れてください。</p>
+      </div>
+    </div>
+    <p class="placeholder-note">※ ここはサンプルです。実際の動画タイトル・リンクに差し替えてください。</p>
+  </div>
+
+  <footer>
+    <span>Yuto Okada</span>
+    <span>© 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
