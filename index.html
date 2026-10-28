@@ -63,15 +63,19 @@
   .banner-wrap{
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    padding: 44px 24px 68px;
     overflow: hidden;
     background: #10141A;
+    text-align: center;
   }
-  .banner-wrap img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  .banner-title{
+    margin: 0;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 44px;
+    letter-spacing: .06em;
+    line-height: 1;
+    color: #FFFFFF;
   }
 
   .avatar-wrap{
@@ -87,7 +91,7 @@
     object-fit: cover;
     border: 4px solid var(--surface);
     box-shadow: 0 4px 14px rgba(20, 40, 60, .18);
-    background: #10141A;
+    background: var(--blue-soft);
   }
 
   .hero-body{
@@ -380,7 +384,7 @@
 
   <div class="hero">
     <div class="banner-wrap">
-      <img src="banner.png" alt="おかだゆうと バナー">
+      <p class="banner-title">PortFolio</p>
     </div>
     <div class="avatar-wrap">
       <img src="icon.png" alt="おかだゆうと アイコン">
